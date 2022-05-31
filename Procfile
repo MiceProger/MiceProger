@@ -1,0 +1,1 @@
+web: java -jar target/MyVocabulary-back-end.jar
