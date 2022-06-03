@@ -1,1 +1,1 @@
-web: java -jar target/MyVocabulary-back-end.jar
+web: java -Dserver.port=$PORT -jar target/MyVocabulary-0.0.1-SNAPSHOT.jar
