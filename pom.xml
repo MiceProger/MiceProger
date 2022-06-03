@@ -8,7 +8,7 @@
 		<version>2.6.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.michael.</groupId>
+	<groupId>com.michael</groupId>
 	<artifactId>MyVocabulary</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>MyVocabulary</name>
