@@ -67,14 +67,15 @@
 					</excludes>
 				</configuration>
 			</plugin> -->
-			<!-- <plugin>
+			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
+					<executable>C:\Program Files\Java\jdk-14.0.2\bin\javac.exe</executable>
 					<source>1.8</source>
 					<target>1.8</target>
 				</configuration>
-			</plugin> -->
+			</plugin>
 		</plugins>
 	</build>
 
