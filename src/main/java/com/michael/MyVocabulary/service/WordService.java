@@ -7,9 +7,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 @Service
 public class WordService {
@@ -21,6 +19,12 @@ public class WordService {
         SimpleDateFormat sdf =
                 new SimpleDateFormat("d MMMM HH:mm", new Locale("uk","ua"));
         List<VocabularyWord> words = wordRepository.findAll();
+        if (words.isEmpty()){
+            VocabularyWord vocabularyWord = VocabularyWord.builder().word("hello").comments("test").addingDate(new Date()).translation("test").special(false).status("PHRASAL_VERB").build();
+            ArrayList<VocabularyWord> list = new ArrayList<VocabularyWord>();
+            list.add(vocabularyWord);
+            return list;
+        }
         for (VocabularyWord word: words) {
             if (word.getAddingDate() != null) word.setFormattedDate(sdf.format(word.getAddingDate()));
         }
