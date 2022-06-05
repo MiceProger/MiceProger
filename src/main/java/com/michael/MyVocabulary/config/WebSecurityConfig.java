@@ -13,13 +13,13 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
 
-@Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http)
             throws Exception {
+        http.cors();
         http.csrf().disable();
         http.authorizeRequests().antMatchers("/vocabularyWords" ).fullyAuthenticated().and().httpBasic();
     }
