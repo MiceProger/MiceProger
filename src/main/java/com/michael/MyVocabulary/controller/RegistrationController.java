@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "https://miceproger.github.io", maxAge = 3600)
 public class RegistrationController  {
 
     @Autowired
