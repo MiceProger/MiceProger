@@ -19,7 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http)
             throws Exception {
-        http.cors();
+        http.cors().disable();
         http.csrf().disable();
         http.authorizeRequests().antMatchers("/vocabularyWords" ).fullyAuthenticated().and().httpBasic();
     }
@@ -32,7 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200", "http://localhost:8080", "https://miceproger.github.io", " https://damp-dawn-99093.herokuapp.com"));
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200", "http://localhost:8080", "https://miceproger.github.io/**", " https://damp-dawn-99093.herokuapp.com"));
         configuration.setAllowedMethods(Arrays.asList("GET", "PUT", "POST","OPTIONS", "DELETE"));
         configuration.setAllowedHeaders(Arrays.asList("authorization","content-type"));
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
